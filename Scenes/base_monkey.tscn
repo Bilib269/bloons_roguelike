@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk50nxb20inkr"]
+
+[ext_resource type="Texture2D" uid="uid://cu7hueup2qpju" path="res://Assets/monkeyface.svg" id="1_mn1e1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uvwpk"]
+radius = 152.013
+
+[node name="baseMonkey" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mn1e1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uvwpk")
