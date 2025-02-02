@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://det5m5asj6sv7"]
+[gd_scene load_steps=5 format=3 uid="uid://det5m5asj6sv7"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_mscmp"]
+[ext_resource type="PackedScene" uid="uid://bk50nxb20inkr" path="res://Scenes/base_monkey.tscn" id="2_2h1fu"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_72ftp"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_cf4ch"]
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_mscmp")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0, 0.223529, 0.913725, 1)
+position = Vector2(589.5, 351.5)
+scale = Vector2(1571, 933)
+texture = SubResource("CanvasTexture_72ftp")
+
+[node name="Ground" type="Area2D" parent="."]
+
+[node name="Ground" type="Sprite2D" parent="Ground"]
+modulate = Color(0, 0.43, 0.0931667, 1)
+position = Vector2(577.75, 323.75)
+scale = Vector2(1156.5, 648.5)
+texture = SubResource("CanvasTexture_cf4ch")
+
+[node name="baseMonkey" parent="." instance=ExtResource("2_2h1fu")]
+position = Vector2(382, 232)
+scale = Vector2(0.2, 0.2)

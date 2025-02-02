@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://n2d70o1mutfw"]
+
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_61k4x"]
+[ext_resource type="Script" path="res://Scripts/collision_shape_2d.gd" id="1_qn6p5"]
+[ext_resource type="Script" path="res://Scripts/bullet_on_screen_notifier.gd" id="2_rqh8l"]
+
+[node name="bullet" type="Node2D" groups=["bullets"]]
+script = ExtResource("1_61k4x")
+
+[node name="baseSprite" type="Sprite2D" parent="."]
+
+[node name="BulletOnScreenNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+script = ExtResource("2_rqh8l")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+script = ExtResource("1_qn6p5")
+
+[connection signal="screen_exited" from="BulletOnScreenNotifier" to="BulletOnScreenNotifier" method="_on_screen_exited"]
